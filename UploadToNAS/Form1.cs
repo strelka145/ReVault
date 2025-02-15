@@ -90,6 +90,7 @@ namespace UploadToNAS
 
                 // ショートカットを保存
                 shortcut.Save();
+                System.IO.File.WriteAllText(lastrunTXT_path.Text + "\\lastrun.txt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             else
             {
