@@ -28,14 +28,14 @@ namespace UploadToNAS
             else
             {
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                textBox3.Text = desktopPath;
+                lastrunTXT_path.Text = desktopPath;
             }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            getFolderPath(textBox1);
+            getFolderPath(original_data_path);
         }
 
         private void getFolderPath(TextBox targetTextBox)
@@ -60,24 +60,24 @@ namespace UploadToNAS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            getFolderPath(textBox2);
+            getFolderPath(save_path);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            getFolderPath(textBox3);
+            getFolderPath(lastrunTXT_path);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" &&
-                textBox2.Text != "" &&
-                textBox3.Text != "")
+            if (original_data_path.Text != "" &&
+                save_path.Text != "" &&
+                lastrunTXT_path.Text != "")
             {
                 string exePath = Application.ExecutablePath;
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 string shortcutPath = Path.Combine(desktopPath, "UploadToNAS.lnk");
-                string arguments = $"\"{textBox1.Text}\" \"{textBox2.Text}\" \"{textBox3.Text}\"";
+                string arguments = $"\"{original_data_path.Text}\" \"{save_path.Text}\" \"{lastrunTXT_path.Text}\"";
                 WshShell wshShell = new WshShell();
                 IWshShortcut shortcut = (IWshShortcut)wshShell.CreateShortcut(shortcutPath);
 

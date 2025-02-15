@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            original_data_path = new TextBox();
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
             label2 = new Label();
-            textBox2 = new TextBox();
+            save_path = new TextBox();
             button3 = new Button();
             label3 = new Label();
-            textBox3 = new TextBox();
+            lastrunTXT_path = new TextBox();
             button4 = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // original_data_path
             // 
-            textBox1.Location = new Point(131, 30);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(243, 23);
-            textBox1.TabIndex = 0;
+            original_data_path.Location = new Point(131, 30);
+            original_data_path.Name = "original_data_path";
+            original_data_path.Size = new Size(243, 23);
+            original_data_path.TabIndex = 0;
             // 
             // label1
             // 
@@ -86,12 +86,12 @@
             label2.Text = "保存先";
             label2.Click += label2_Click;
             // 
-            // textBox2
+            // save_path
             // 
-            textBox2.Location = new Point(131, 87);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(243, 23);
-            textBox2.TabIndex = 3;
+            save_path.Location = new Point(131, 87);
+            save_path.Name = "save_path";
+            save_path.Size = new Size(243, 23);
+            save_path.TabIndex = 3;
             // 
             // button3
             // 
@@ -112,12 +112,12 @@
             label3.TabIndex = 7;
             label3.Text = "lastrun.txt保存場所";
             // 
-            // textBox3
+            // lastrunTXT_path
             // 
-            textBox3.Location = new Point(131, 141);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(243, 23);
-            textBox3.TabIndex = 6;
+            lastrunTXT_path.Location = new Point(131, 141);
+            lastrunTXT_path.Name = "lastrunTXT_path";
+            lastrunTXT_path.Size = new Size(243, 23);
+            lastrunTXT_path.TabIndex = 6;
             // 
             // button4
             // 
@@ -137,15 +137,15 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(lastrunTXT_path);
             Controls.Add(button2);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(save_path);
             Controls.Add(button1);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(original_data_path);
             Name = "Form1";
-            Text = "Form1";
+            Text = "初期設定";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -153,15 +153,15 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox original_data_path;
         private Label label1;
         private Button button1;
         private Button button2;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox save_path;
         private Button button3;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox lastrunTXT_path;
         private Button button4;
     }
 }
