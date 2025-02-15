@@ -12,9 +12,11 @@ namespace UploadToNAS
 {
     public partial class Form2 : Form
     {
-        private string sourceDir;
-        private string destinationRoot;
-        private string lastRunFile;
+        private string sourceDir;       // コピー元ディレクトリ
+        private string destinationRoot; // 保存先ディレクトリ
+        private string lastRunFile;     // 最終実行時刻を記録するファイルの保存場所
+
+        // コンストラクタ: 引数で各種ディレクトリ情報を受け取る
         public Form2(string arg1, string arg2, string arg3)
         {
             InitializeComponent();
@@ -35,17 +37,22 @@ namespace UploadToNAS
 
         private void UploadToNAS()
         {
+            // コピー元ディレクトリが存在しない場合、警告を表示
             if (!Directory.Exists(sourceDir))
             {
                 MessageBox.Show($"エラー: コピー元フォルダが存在しません: {sourceDir}", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            // 保存先ディレクトリが存在しない場合、警告を表示
             if (!Directory.Exists(destinationRoot))
             {
                 MessageBox.Show($"エラー: 保存先フォルダが存在しません: {destinationRoot}", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            // 最終実行時刻を取得
             DateTime lastRunTime = GetLastRunTime(lastRunFile);
             DateTime currentRunTime = DateTime.Now;
 
+            // 指定ディレクトリ以下のファイルのうち、最終実行時刻より新しいものを取得
             var files = Directory.EnumerateFiles(sourceDir, "*.*", SearchOption.AllDirectories)
                 .Where(file => File.GetLastWriteTime(file) > lastRunTime);
 
