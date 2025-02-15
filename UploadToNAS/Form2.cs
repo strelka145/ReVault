@@ -39,6 +39,10 @@ namespace UploadToNAS
             {
                 MessageBox.Show($"エラー: コピー元フォルダが存在しません: {sourceDir}", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            if (!Directory.Exists(destinationRoot))
+            {
+                MessageBox.Show($"エラー: 保存先フォルダが存在しません: {destinationRoot}", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             DateTime lastRunTime = GetLastRunTime(lastRunFile);
             DateTime currentRunTime = DateTime.Now;
 
