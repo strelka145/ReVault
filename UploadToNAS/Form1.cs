@@ -23,7 +23,7 @@ namespace UploadToNAS
                 string arg2 = args[2];
                 string arg3 = args[3];
                 Form2 form2 = new Form2(arg1, arg2, arg3);
-                form2.Show();
+                form2.ShowDialog();
             }
             else
             {
